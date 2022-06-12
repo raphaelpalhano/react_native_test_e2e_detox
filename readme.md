@@ -182,3 +182,12 @@ keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddeb
 * CN: "CN=Android Debug,O=Android,C=US"
 
 6. `execute: detox build --configuration android.emu.debug --cleanup`
+
+
+# Executando o Teste
+
+1. **Inicialize o servidor** `yarn start`
+
+2. **Build do App**: `yarn android`
+
+3. **Rode o teste com o Emulador aberto**: `yarn test:android`

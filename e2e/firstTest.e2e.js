@@ -12,10 +12,10 @@ describe('First Suit test', () => {
     await expect(result).toBeVisible();
   });
 
-  // it('should show hello screen after tap', async () => {
-  //   await element(by.id('hello_button')).tap();
-  //   await expect(element(by.text('Hello!!!'))).toBeVisible();
-  // });
+  it('should show hello screen after tap', async () => {
+     await element(by.id('option-premium')).tap();
+     await expect(element(by.text('6.99'))).toBeVisible();
+  });
 
   // it('should show world screen after tap', async () => {
   //   await element(by.id('world_button')).tap();
