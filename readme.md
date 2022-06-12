@@ -157,3 +157,28 @@ yarn detox build -c ios.sim.debug
 
 **No Android:** detox test -c android.emu.debug 
 **No iOS:** yarn detox test -c ios.sim.debug
+
+## 9. Setup final
+
+1. Install Gradle: `brew install gradle` PATH: `export PATH=$PATH:/opt/gradle/gradle-7.4.2/bin`
+2. acess folder android: `cd android`
+3. set flag `chmod +x gradlew`
+
+4. Create local.properties:
+
+**cli**: `cd android`
+
+**create file: local.priperties**
+`sdk.dir=/Users/raphael.arevalos/Library/Android/sdk`
+
+5. cd `android/app` Create keystore
+
+keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
+
+* Keystore name: "debug.keystore"
+* Keystore password: "android"
+* Key alias: "androiddebugkey"
+* Key password: "android"
+* CN: "CN=Android Debug,O=Android,C=US"
+
+6. `execute: detox build --configuration android.emu.debug --cleanup`

@@ -27,20 +27,3 @@ public class DetoxTest {
         Detox.runTests(mActivityRule, detoxConfig);
     }
 }
-5. Iniciando o Detox
-yarn detox init -r jest
-6. Atualizando o arquivo .detoxrc.json
-{
-  "testRunner": "jest",
-  "runnerConfig": "e2e/config.json",
-  "configurations": {
-    "android.emu.debug": {
-      "type": "android.emulator",
-      "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
-      "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
-      "device": {
-        "avdName": "Pixel_3a_API_29"
-      }
-    }
-  }
-}
